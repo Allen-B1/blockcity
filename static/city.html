@@ -13,15 +13,15 @@
     --darker: #333;
     z-index: 5;
     margin-top: -12px;
-    margin-left: 12px;
-    box-shadow: -12px 12px 4px 12px rgba(0,0,0,0.2);
+    margin-left: -12px;
+    box-shadow: 12px 12px 4px 12px rgba(0,0,0,0.2);
 }
 .block .inner::before {
     content: " ";
     background: transparent;
-    left: -12px;
+    right: -12px;
     height: 100%;
-    border-right: 12px solid var(--dark);
+    border-left: 12px solid var(--dark);
     border-top: 12px solid transparent;
     position: absolute;
     z-index: 2;
@@ -30,10 +30,10 @@
     content: " ";
     background: transparent;
     bottom: -12px;
-    left: -12px;
+    right: -12px;
     width: 100%;
     border-top: 12px solid var(--darker);
-    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
     position: absolute;
     z-index: 2;
  }
@@ -41,9 +41,9 @@
     content: " ";
     position: absolute;
     border-top: 12px solid var(--dark);
-    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
     bottom: -12px;
-    left: -12px;
+    right: -12px;
     z-index: 4;
 }
 
@@ -65,20 +65,20 @@
     --darker: hsl(270, 95%, 40%); }
 
 .block-wall {
-    box-shadow: -48px 48px 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 48px 48px 4px 48px rgba(0,0,0,0.2);
     margin-top: -48px;
-    margin-left: 48px;
+    margin-left: -48px;
     background: #aaa;
     --dark: #888;
     --darker: #777; }
 .block-wall .inner::before {
-    left: -48px;
-    border-right-width: 48px;
+    right: -48px;
+    border-left-width: 48px;
     border-top-width: 48px; }
 .block-wall .inner::after, .block-wall::after {
-    left: -48px;
+    right: -48px;
     bottom: -48px;
-    border-right-width: 48px;
+    border-left-width: 48px;
     border-top-width: 48px; }
 
 #blocks {
@@ -155,7 +155,7 @@ function update() {
             }
             elem.style.left = x + "px";
             elem.style.top = y + "px";
-            elem.style.zIndex = -position[0] + position[1];
+            elem.style.zIndex = position[0] + position[1];
             BLOCKS_ELEM.appendChild(elem);
         }
     });
